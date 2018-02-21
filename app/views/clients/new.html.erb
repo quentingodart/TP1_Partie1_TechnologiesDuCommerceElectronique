@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 style="text-align:center">Formulaire d'inscription</h1>
+    <br>
+    <p>Veuillez remplir le formulaire d'inscription suivant.</p>
+  </div>
+</div>
+  <%= render 'form', client: @client %>
+
+
+  <%= link_to 'Back', clients_path, class: 'btn btn-default' %>
+
+  <footer class="footer" style="background-color:#424141">
+      <div class="container">
+        <span class="text-muted">®2018 Tous droits réservés, Quentin Godart et Anaïs Foncel.</span>
+      </div>
+  </footer>

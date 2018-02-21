@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @client_has_employeur.Client %>
+</p>
+
+<p>
+  <strong>Employeur:</strong>
+  <%= @client_has_employeur.Employeur %>
+</p>
+
+<p>
+  <strong>Datedebut:</strong>
+  <%= @client_has_employeur.DateDebut %>
+</p>
+
+<p>
+  <strong>Datefin:</strong>
+  <%= @client_has_employeur.DateFin %>
+</p>
+
+<%= link_to 'Edit', edit_client_has_employeur_path(@client_has_employeur) %> |
+<%= link_to 'Back', client_has_employeurs_path %>

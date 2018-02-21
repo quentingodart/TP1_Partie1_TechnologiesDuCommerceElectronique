@@ -1,0 +1,31 @@
+<tr>
+  <td>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label :Nom %>
+        <%= f.text_field :Nom, id: :employeur_Nom %>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label "Adresse" %>
+        <%= f.text_field :Adresse_id, id: :employeur_Adresse_id %>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="deleteButton">
+          <%= f.input_field :_destroy, as: :hidden %>
+          <%= link_to 'Supprimer', '#', class: 'btn btn-danger btn-xs remove_record' %>
+        </div>
+      </div>
+    </div>
+  </td>
+
+</tr>

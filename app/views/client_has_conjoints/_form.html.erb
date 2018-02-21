@@ -1,0 +1,37 @@
+<%= form_with(model: client_has_conjoint, local: true) do |form| %>
+  <% if client_has_conjoint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client_has_conjoint.errors.count, "error") %> prohibited this client_has_conjoint from being saved:</h2>
+
+      <ul>
+      <% client_has_conjoint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Client_id %>
+    <%= form.text_field :Client_id, id: :client_has_conjoint_Client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Client_Has_Conjoint_id %>
+    <%= form.text_field :Client_Has_Conjoint_id, id: :client_has_conjoint_Client_Has_Conjoint_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DateDebut %>
+    <%= form.datetime_select :DateDebut, id: :client_has_conjoint_DateDebut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DateFin %>
+    <%= form.datetime_select :DateFin, id: :client_has_conjoint_DateFin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

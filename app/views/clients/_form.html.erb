@@ -1,0 +1,141 @@
+<%= form_with(model: client, local: true) do |form| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container" id="main_container">
+<h2 class="title">Nouveau client</h2>
+<div class="row">
+  <div class="col-md-6">
+    <div class="field">
+      <%= form.label :Prenom %>
+      <%= form.text_field :Prenom, id: :client_Prenom %>
+    </div>
+  </div>
+
+<div class="col-md-6">
+  <div class="field">
+    <%= form.label :Nom %>
+    <%= form.text_field :Nom, id: :client_Nom %>
+  </div>
+</div>
+<br><br><br><br>
+  <div class="col-md-6">
+    <div class="field">
+      <%= form.label "Date de naissance" %>
+      <%= form.datetime_select :DateNaissance, id: :client_DateNaissance %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="field">
+      <%= form.label :NAS %>
+      <%= form.text_field :NAS, id: :client_NAS %>
+    </div>
+  </div>
+</div>
+<br><br>
+  <div id="formAdress" class="tabs">
+      <h2 class="title">Adresse</h2>
+      <%= form.simple_fields_for :adress do |a| %>
+        <%= render 'adressForm', form: a %>
+      <% end %>
+  </div>
+<br><br>
+    <div id="formEnfant" class="tabs">
+        <h2 class="title">Enfant</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="addButton">
+              <%= link_to_add_row('Ajouter un enfant', form, :enfant, class: 'btn btn-primary', target: '.newEnfant') %>
+            </div>
+            <div class="newEnfant">
+              <%= form.simple_fields_for :enfant do |a| %>
+                <%= render 'enfant', f: a %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+<br><br>
+    <div id="formEtude" class="tabs">
+        <h2 class="title">Etude</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="addButton">
+              <%= link_to_add_row('Ajouter un lieu d\'étude', form, :etude, class: 'btn btn-primary', target: '.newEtude') %>
+            </div>
+            <div class="newEtude">
+              <%= form.simple_fields_for :etude do |a| %>
+              <%= render 'etude', f: a %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+<br><br>
+    <div id="formConjoint" class="tabs">
+        <h2 class="title">Conjoint</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="addButton">
+              <%= link_to_add_row('Ajouter un conjoint', form, :client_has_conjoint, class: 'btn btn-primary', target: '.newConjoint') %>
+            </div>
+            <div class="newConjoint">
+              <%= form.simple_fields_for :client_has_conjoint do |a| %>
+                <%= render 'client_has_conjoint', f: a %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+<br><br>
+
+    <div id="formEmployeur" class="tabs">
+        <h2 class="title">Employeur</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="addButton">
+              <%= link_to_add_row('Ajouter un employeur', form, :employeur, class: 'btn btn-primary', target: '.newEmployeur') %>
+            </div>
+            <div class="newEmployeur">
+              <%= form.simple_fields_for :employeur do |a| %>
+                <%= render 'employeur', f: a %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<br><br>
+    <div id="formEtatsCivil" class="tabs">
+        <h2 class="title">Etat civil</h2>
+        <div class="field">
+          <%= form.label "Type" %>
+          <%= form.text_field :type, id: :etats_civil_type %>
+        </div>
+    </div>
+
+  <!-- <div class="field">
+    <%= form.label :NombreEnfants %>
+    <%= form.number_field :NombreEnfants, id: :client_NombreEnfants %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CompteTaxesProprietaire %>
+    <%= form.number_field :CompteTaxesProprietaire, id: :client_CompteTaxesProprietaire %>
+  </div> -->
+  <br><br><br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>

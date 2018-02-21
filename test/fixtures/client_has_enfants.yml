@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Enfant: one
+  Client: one
+  Lien: 1
+
+two:
+  Enfant: two
+  Client: two
+  Lien: 1

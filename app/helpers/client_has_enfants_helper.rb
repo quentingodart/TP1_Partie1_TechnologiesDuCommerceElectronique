@@ -1,0 +1,2 @@
+module ClientHasEnfantsHelper
+end

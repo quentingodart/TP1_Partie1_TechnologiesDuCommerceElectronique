@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Client Etats Civils</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Etascivil</th>
+      <th>Datedebut</th>
+      <th>Datefin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client_etats_civils.each do |client_etats_civil| %>
+      <tr>
+        <td><%= client_etats_civil.Client %></td>
+        <td><%= client_etats_civil.EtasCivil %></td>
+        <td><%= client_etats_civil.DateDebut %></td>
+        <td><%= client_etats_civil.DateFin %></td>
+        <td><%= link_to 'Show', client_etats_civil %></td>
+        <td><%= link_to 'Edit', edit_client_etats_civil_path(client_etats_civil) %></td>
+        <td><%= link_to 'Destroy', client_etats_civil, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client Etats Civil', new_client_etats_civil_path %>

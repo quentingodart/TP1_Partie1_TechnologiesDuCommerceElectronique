@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Client Has Employeurs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Employeur</th>
+      <th>Datedebut</th>
+      <th>Datefin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client_has_employeurs.each do |client_has_employeur| %>
+      <tr>
+        <td><%= client_has_employeur.Client %></td>
+        <td><%= client_has_employeur.Employeur %></td>
+        <td><%= client_has_employeur.DateDebut %></td>
+        <td><%= client_has_employeur.DateFin %></td>
+        <td><%= link_to 'Show', client_has_employeur %></td>
+        <td><%= link_to 'Edit', edit_client_has_employeur_path(client_has_employeur) %></td>
+        <td><%= link_to 'Destroy', client_has_employeur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client Has Employeur', new_client_has_employeur_path %>

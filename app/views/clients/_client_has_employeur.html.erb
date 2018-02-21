@@ -1,0 +1,40 @@
+<tr>
+  <td>
+    <div class="field">
+      <%= f.label "Client" %>
+      <%= f.text_field :Client_id, id: :client_has_employeur_Client_id %>
+    </div>
+  </td>
+
+  <td>
+    <div class="field">
+      <%= f.label "Employeur" %>
+      <%= f.text_field :Employeur_id, id: :client_has_employeur_Employeur_id %>
+    </div>
+  </td>
+
+  <td>
+    <div class="field">
+      <%= f.label "Date de début" %>
+      <%= f.datetime_select :DateDebut, id: :client_has_employeur_DateDebut %>
+    </div>
+  </td>
+
+  <td>
+    <div class="field">
+      <%= f.label "Date de fin" %>
+      <%= f.datetime_select :DateFin, id: :client_has_employeur_DateFin %>
+    </div>
+  </td>
+
+  <td>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="deleteButton" style="position:relative;left:270px">
+            <%= f.input_field :_destroy, as: :hidden %>
+            <%= link_to 'Supprimer', '#', class: 'btn btn-danger btn-xs remove_record'%>
+          </div>
+        </div>
+      </div>
+  </td>
+</tr>

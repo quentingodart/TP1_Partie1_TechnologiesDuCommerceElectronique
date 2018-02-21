@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Secteuretudes:</strong>
+  <%= @etude.SecteurEtudes %>
+</p>
+
+<p>
+  <strong>Niveau:</strong>
+  <%= @etude.Niveau %>
+</p>
+
+<p>
+  <strong>Datedebut:</strong>
+  <%= @etude.DateDebut %>
+</p>
+
+<p>
+  <strong>Datecomplition:</strong>
+  <%= @etude.DateComplition %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @etude.Client %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @etude.Institution %>
+</p>
+
+<%= link_to 'Edit', edit_etude_path(@etude) %> |
+<%= link_to 'Back', etudes_path %>

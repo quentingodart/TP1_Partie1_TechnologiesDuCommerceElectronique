@@ -1,0 +1,48 @@
+<tr>
+  <td>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label "Client" %>
+        <%= f.text_field :Client_id, id: :client_has_conjoint_Client_id %>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label "Conjoint du Client" %>
+        <%= f.text_field :Client_Has_Conjoint_id, id: :client_has_conjoint_Client_Has_Conjoint_id %>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label "Date de début" %>
+        <%= f.datetime_select :DateDebut, id: :client_has_conjoint_DateDebut %>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label "Date de fin" %>
+        <%= f.datetime_select :DateFin, id: :client_has_conjoint_DateFin %>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="deleteButton">
+          <%= f.input_field :_destroy, as: :hidden %>
+          <%= link_to 'Supprimer', '#', class: 'btn btn-danger btn-xs remove_record' %>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>

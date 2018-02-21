@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @client_has_conjoint.Client %>
+</p>
+
+<p>
+  <strong>Client has conjoint:</strong>
+  <%= @client_has_conjoint.Client_Has_Conjoint %>
+</p>
+
+<p>
+  <strong>Datedebut:</strong>
+  <%= @client_has_conjoint.DateDebut %>
+</p>
+
+<p>
+  <strong>Datefin:</strong>
+  <%= @client_has_conjoint.DateFin %>
+</p>
+
+<%= link_to 'Edit', edit_client_has_conjoint_path(@client_has_conjoint) %> |
+<%= link_to 'Back', client_has_conjoints_path %>
